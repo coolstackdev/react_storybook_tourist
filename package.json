@@ -2,6 +2,10 @@
   "name": "instahop",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.19.0",
+    "yarn": "1.22.4"
+  },
   "scripts": {
     "go": "concurrently \"yarn run start\" \"yarn run storybook\"",
     "start": "yarn run dev",
@@ -99,7 +103,6 @@
     "sass-loader": "^8.0.0",
     "sinon": "^7.3.2",
     "style-loader": "^1.0.0",
-    "uglifyjs-webpack-plugin": "^2.1.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
@@ -129,6 +132,7 @@
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
     "normalizr": "^3.4.1",
+    "notistack": "^0.9.7",
     "prop-types": "^15.6.2",
     "query-string": "^6.8.2",
     "ramda": "^0.26.1",
@@ -161,6 +165,7 @@
     "react-router-scroll-top": "^0.2.1",
     "react-router-sitemap": "^1.2.0",
     "react-slick": "^0.25.2",
+    "react-slidedown": "^2.4.5",
     "react-stripe-elements": "^4.0.1",
     "react-swipeable-views": "^0.13.3",
     "react-tabs": "^3.0.0",
@@ -184,9 +189,12 @@
     "styled-components-breakpoint": "^2.1.1",
     "styled-theme": "^0.3.3",
     "styled-tools": "^1.6.0",
-    "terser-webpack-plugin": "^1.4.1",
+    "terser-webpack-plugin": "^2.2.1",
+    "timeago-react": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "validator": "^11.1.0",
     "velocity-react": "^1.4.3",
+    "video-react": "^0.14.1",
     "whatwg-fetch": "^3.0.0"
   }
 }

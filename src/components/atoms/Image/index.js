@@ -10,7 +10,10 @@ const Wrapper = styled.div`
 	display: block;
 	/* width: 100%; */
 	width: ${prop('width')};
-	/* height: ${(props) => ifProp('height', props.height)}px; */
+
+	@media screen and (min-width: 800px) {
+		height: ${(props) => ifProp('height', props.height)}px;
+	}
 `
 
 const FeatureImage = styled.img`
@@ -46,7 +49,7 @@ const Image = ({
 	children,
 }) => {
 	return (
-		<Wrapper className={className} height={height} >
+		<Wrapper className={className} >
 			{/* {children && children} */}
 			<FeatureImage src={imgSrc} />
 			{/* <MainImageContainer>

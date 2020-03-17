@@ -21,6 +21,8 @@ const EnhancedRating = ({
   // const fullSymbol = <Icon icon="star-empty" white={white} />
   // const emptySymbol = <Icon icon="star-full" white={white} />
 
+  // console.log(props)
+
   return (
     <StyledRating {...props} fullSymbol={fullSymbol} emptySymbol={emptySymbol} />
   )

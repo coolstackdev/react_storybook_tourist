@@ -19,14 +19,14 @@ const Spacer = styled.div`
 
 const CategoryModal = ({
   onClose,
+  onApply,
   ...props
 }) => {
-
   return (
     <Modal title="What are you interested in?" name="category" closeable className="ignore-react-onclickoutside" {...props}>
       <Spacer />
       <Categories categoryModal />
-      <StyledButton onClick={onClose}>Add Categories</StyledButton>
+      <StyledButton onClick={onClose}>Apply</StyledButton>
     </Modal>
   )
 }

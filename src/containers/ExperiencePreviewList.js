@@ -18,13 +18,16 @@ const ExperiencePreviewListContainer = ({
   ...props
 }) => {
   const superCategories = moveObjectFieldToArray(categories, 'id').toString()
-  const apiHeaderLanguages = moveObjectFieldToArray(languages, 'id').toString()
+  const apiHeaderLanguages = moveObjectFieldToArray(languages, 'id').toString()  
+  const cityName = props.match.params.cityname
+  const experienceid = props.match.params.experiencename
 
   const apiRequestParams = {
-    endpoint: 'GetExperiences',
+    endpoint: 'GetExperiences_Other',
+    experienceid,
     count: 10,
     step: 1,
-    cityid: 'vancouver',
+    cityid: cityName,
     startdate: '2018-12-20 8:30:00',
     enddate: '2018-12-20 22:15:00',
     sort_by: 'rating',
@@ -52,6 +55,7 @@ const ExperiencePreviewListContainer = ({
       categories,
       adults,
       kids,
+      cityName,
       ...props
     }}/>
 }

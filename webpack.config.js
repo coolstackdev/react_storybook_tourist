@@ -12,7 +12,7 @@ const mergeWith = require('lodash/mergeWith')
 const isArray = require('lodash/isArray')
 
 const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 const sourceDir = process.env.SOURCE || 'src'
 const publicPath = `/${process.env.PUBLIC_PATH || ''}/`.replace('//', '/')
 const sourcePath = path.join(process.cwd(), sourceDir)

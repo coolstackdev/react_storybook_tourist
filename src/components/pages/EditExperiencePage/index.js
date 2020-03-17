@@ -13,7 +13,7 @@ const EditExperiencePage = (props) => {
   useEffect(() => {
     window.analytics.page('EditExperiencePage')
   }, [])
-
+  console.log(props)
 
   return (
     <>

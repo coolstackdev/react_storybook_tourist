@@ -93,3 +93,12 @@ export const socialLogout = () => {
     type: SOCIAL_LOGOUT
   }
 }
+
+export const HOST_ID_UPDATE = 'HOST_ID_UPDATE'
+
+export const hostIdUpdate = (payload) => {
+  return {
+    type: HOST_ID_UPDATE,
+    payload
+  }
+}

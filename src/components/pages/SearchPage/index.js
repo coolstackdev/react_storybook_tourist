@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { palette, ifProp } from 'styled-tools'
 import { withRouter } from 'react-router-dom'
 import CountUp from 'react-countup'
-import { useScrollPosition }from 'hooks'
+import { useScrollPosition, useWindowSize }from 'hooks'
 import {
   PageTemplate,
   Header,
@@ -41,20 +41,28 @@ const FilterButton = styled(IconButton)`
 const StyledHeading = styled(Heading)`
 	display: inline;
 	font-size: 1.1em;
-	color: ${palette('secondary', 0)};
-	margin-left: .8em;
+	color: black;
+  margin-left: .8em;
+  margin-bottom: 31px;
 
 	@media screen and (min-width: 800px) {
-		font-size: 1.35em;
-		margin-left: 0;
+		font-size: 24px;
+    margin-left: 47px;
+
+    & .countUp {
+      font-size: 24px;
+    }
 	}
 
 	& .countUp {
-		font-weight: bold;
+    font-weight: bold;
+    font-size: 1.1em;
 	}
 `
 
 const SearchPage = (props) => {
+  let { width } = useWindowSize()
+	let mobile = width < 800
 
   const [filterOpen, setFilterOpen] = useState(false)
   const [numExperiences, setNumExperiences] = useState(null)
@@ -81,16 +89,25 @@ const SearchPage = (props) => {
         header={<Header topPage={pagePosition === 0 && true} />}
       >
         <Container>
+          {
+            !mobile ?
+             <FilterBlock />
+             :
+             filterOpen && 
+              <FilterBlock setFilterOpen={setFilterOpen} />
+          }
           <Flex>
-            {filterOpen && <FilterBlock setFilterOpen={setFilterOpen} />}
+            {/* {filterOpen && <FilterBlock setFilterOpen={setFilterOpen} />} */}
             <StyledHeading level={2}>
+              You have
               {' '}
               <CountUp className="countUp" delay={1} end={numExperiences} />
               {' '}
               experiences to explore
 						</StyledHeading>
-
-            <FilterButton onClick={handleClickFilterButton} filterOpen={filterOpen} icon="filter" className="ignore-react-onclickoutside">{filterOpen ? 'Close' : 'Filters'}</FilterButton>
+            {mobile &&
+              <FilterButton onClick={handleClickFilterButton} filterOpen={filterOpen} icon="filter" className="ignore-react-onclickoutside">{filterOpen ? 'Close' : 'Filters'}</FilterButton>
+            }
           </Flex>
           <ExperienceList setNumExperiences={setNumExperiences} {...props} />
         </Container>

@@ -11,7 +11,7 @@ const SectionWrapper = styled.div`
   padding-left: .6em;
   padding-right: .6em;
   /* max-width: ${size('maxWidth')}; */
-  max-width: 50em;
+  max-width: 90em;
   margin: 2em auto;
 
   @media screen and (min-width: 700px) {

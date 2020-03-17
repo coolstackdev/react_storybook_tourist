@@ -18,24 +18,22 @@ const OuterWrapper = styled.div`
 		position: absolute;
 		bottom: 10px;
 		left: 50%;
-		margin-left: -112.5px;
+		margin-left: -70px;
 		justify-content: center;
 
 		.dot-holder {
-			height: 10px !important;
-			width: 10px !important;
-
-			@media screen and (min-width: 800px) {
-				height: 25px !important;
-				width: 25px !important;
-			}
+			height: 6px !important;
+			width: 6px !important;
+			margin: 0 5px !important;
 
 			.react-carousel-dots-dot {
 				border: none !important;
 				background-color: ${palette('grayscale', 5)};
+				opacity: 0.4;
 
 				&.active {
 					background-color: ${palette('secondary', 3)};
+					opacity: 1;
 				}
 			}
 		}
@@ -57,6 +55,12 @@ const panelStyles = css`
 	right: 0;
 	width: 20%;
 	cursor: pointer;
+
+	& span {
+		width: 42px;
+		height: 42px;
+		// color: #16ef76 !important
+	}
 `
 
 const LeftPanel = styled.div`
@@ -104,7 +108,7 @@ class Carousel extends React.Component {
 	}
 
 	slideWidth = () => {
-		return document.querySelector('.slide').clientWidth
+		return document.querySelector('.slider-wrapper').getBoundingClientRect().width
 	}
 
 	render() {

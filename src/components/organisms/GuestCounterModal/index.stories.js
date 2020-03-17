@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { GuestCounterModal.js } from 'components'
+import { GuestCounterModal } from 'components'
 
 storiesOf('GuestCounterModal.js', module)
   .add('default', () => (

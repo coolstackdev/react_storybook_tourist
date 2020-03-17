@@ -13,6 +13,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onLogin: () => dispatch(modalShow('signin')),
+  onRegister: () => dispatch(modalShow('register')),
   onLogout: () => dispatch(socialLogout()),
 })
 

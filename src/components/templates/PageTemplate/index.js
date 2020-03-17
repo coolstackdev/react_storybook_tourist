@@ -31,6 +31,7 @@ const Content = styled.section`
   width: 100%;
   box-sizing: border-box;
   margin: 2rem auto;
+  margin-bottom: 0;
   max-width: ${size('maxWidth')};
 
   @media screen and (min-width: 500px) {

@@ -2,16 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 import { palette, ifProp } from 'styled-tools'
-import { useWindowSize, useHopServiceApi } from 'hooks'
+import { useWindowSize, useHopServiceApi, useScrollPosition } from 'hooks'
 import {
   Header,
   PageTemplate,
   Icon,
 } from 'components'
-import { SectionOne, SectionTwo, SectionThree, SectionFour, SectionFive } from './components'
+import { SectionOne, SectionTwo, SectionThree, SectionFour, SectionFive, HomeFooter } from './components'
 import FullpageTemplate from '../../templates/FullpageTemplate.js'
 import { SEO } from 'containers'
-
 const MoreWrapper = styled.div`
   position: fixed;
   display: flex;
@@ -41,6 +40,8 @@ const HomePage = (props) => {
     afterLoad: (origin, destination, direction) => setIsHidden(destination.isLast)
   }
 
+  const pagePosition = useScrollPosition()
+
   useEffect(() => {
     window.analytics.page('HomePage')
   }, [])
@@ -67,7 +68,6 @@ const HomePage = (props) => {
   if (!mobile) {
     ConditionalTemplate = FullpageTemplate
   }
-
   return (
     <>
       {!mobile &&
@@ -77,7 +77,8 @@ const HomePage = (props) => {
         </MoreWrapper>
       }
       <ConditionalTemplate
-        header={<Header topPage={false} />}
+        header={<Header topPage={pagePosition === 0 && true} />}
+        // footer={<HomeFooter/>}
         flex
         {...fullpageOptions}
       >
@@ -92,6 +93,7 @@ const HomePage = (props) => {
         <SectionThree />
         <SectionFour handleClickSelectInterests={handleClickSelectInterests} />
         <SectionFive handleMoveTop={handleMoveTop} />
+        <HomeFooter/>
       </ConditionalTemplate>
     </>
   )

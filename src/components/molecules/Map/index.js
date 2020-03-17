@@ -26,6 +26,7 @@ const StyledMap = styled(Map)`
   height: 83vh !important;
   z-index: 1;
   margin-top: 2em;
+  margin-bottom: 95px;
 `
 
 const EnhancedMap = ({

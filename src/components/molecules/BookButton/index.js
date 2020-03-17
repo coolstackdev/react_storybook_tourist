@@ -15,7 +15,7 @@ const StyledButton = styled(Button)`
 const WrapperButton = styled.div`
   position: sticky;
   bottom: 0;
-  z-index: 2;
+  z-index: 7;
   margin-top: 2em;
   text-align: center;
 `

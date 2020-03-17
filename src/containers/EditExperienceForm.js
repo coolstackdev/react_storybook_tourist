@@ -24,7 +24,6 @@ const EditExperienceFormContainer = ({
   ...props
 }) => {
   const experiencename = props.match.params.experiencename
-
   const notify = () => toast("Experience Saved!")
 
   let apiRequestParams
@@ -66,6 +65,7 @@ const EditExperienceFormContainer = ({
       discount: detail.discount,
       categories: moveObjectFieldToArray(detail.categories, 'categoryid').toString(),
       highlights: detail.highlights.join(' | '),
+      highlights_links_string: detail.highlights_links_string,
       languages: createLanguagesAttr(detail.languages),
       photos: createPhotosAttr(detail.photos)
       // photos: detail.photos

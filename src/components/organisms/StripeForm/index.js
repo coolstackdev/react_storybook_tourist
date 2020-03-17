@@ -179,7 +179,7 @@ const StripeForm = ({
 							<ErrorMessage>{props.error}</ErrorMessage>
 							<StyledButton disabled={isWaiting("PayNow")} type="">
 								<Wait on="PayNow" fallback={<Spinner />}>
-									Pay ${costWithDiscount} {currency}
+									Pay {currency} {costWithDiscount.toFixed(2)}
 								</Wait>
 							</StyledButton>
 						</ButtonWrapper>

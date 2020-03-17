@@ -16,8 +16,8 @@ const StyledCard = styled(Card)`
 	align-items: space-between;
 	flex-wrap: wrap;
 	margin-left: .7em;
-	margin-right: .7em;
-	width: 15em;
+	margin-right: 1.7em;
+	width: 306px;
 	min-height: 28rem;
 	padding: 1rem;
 `

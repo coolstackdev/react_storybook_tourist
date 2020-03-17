@@ -5,12 +5,13 @@ import { UserButton } from 'components'
 
 storiesOf('UserButton', module)
   .add('default', () => (
-    <UserButton onLogin={action('login')} onLogout={action('logout')} />
+    <UserButton onLogin={action('login')} onLogout={action('logout')} onRegister={action('register')}/>
   ))
   .add('with user', () => (
     <UserButton
       user={{ picture: 'https://avatars3.githubusercontent.com/u/3068563?v=3&s=460' }}
       onLogin={action('login')}
       onLogout={action('logout')}
+      onRegister={action('register')}
     />
   ))

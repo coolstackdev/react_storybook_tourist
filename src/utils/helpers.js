@@ -1,6 +1,11 @@
 export const moveObjectFieldToArray = (obj, key) => {
 	return obj.map(el => el[key])
 }
+
+export const moveStringToArray = (str) => {
+	return str.split("|")
+}
+
 export const truncate =  (str, length, ending) => {
 	if (length == null) {
 		length = 100

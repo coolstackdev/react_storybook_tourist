@@ -60,6 +60,7 @@ const ExperiencePreviewList = ({
 	list,
 	experienceId,
 	loading,
+	cityName,
 	...props
 }) => {
 	var settings = {
@@ -101,7 +102,7 @@ const ExperiencePreviewList = ({
 			{loading ||
 				<>
 					<Container>
-						<SectionHeading>More Experiences in Vancouver</SectionHeading>
+						<SectionHeading>More Experiences in {cityName}</SectionHeading>
 						<PrevArrow icon="backwards" onClick={previous}/>
 						<StyledSlider ref={c => slider = c} {...settings}>
 							{experienceList}

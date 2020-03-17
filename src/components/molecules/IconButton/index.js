@@ -72,7 +72,7 @@ const IconButton = ({
     responsive,
     height,
   } = props
-  const iconElement = <StyledIcon height={height ? height / 2.5 : undefined} icon={icon} {...props} />
+  const iconElement = icon !== 'signup' ? <StyledIcon height={height ? height / 2.5 : undefined} icon={icon} {...props} /> : ''
   return (
     <StyledButton hasText={!!children} {...props}>
       <Wrapper>
@@ -87,7 +87,7 @@ const IconButton = ({
 }
 
 IconButton.propTypes = {
-  icon: T.string.isRequired,
+  
   responsive: T.bool,
   breakpoint: T.number,
   collapsed: T.bool,

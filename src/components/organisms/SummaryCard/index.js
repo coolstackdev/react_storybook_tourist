@@ -185,7 +185,7 @@ const SummaryCard = ({
 
         <TotalCostRow style={{ justifyContent: 'space-between' }}>
           <Heading level={4}>Total:</Heading>
-          <Heading level={4}>{currency} ${cost}</Heading>
+          <Heading level={4}>{currency} {cost}</Heading>
         </TotalCostRow>
 
         <Popup arrow={false} className="react-popup" trigger={<CancellationLink>cancellation policy</CancellationLink>} position="center">

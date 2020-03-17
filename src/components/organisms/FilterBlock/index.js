@@ -18,25 +18,32 @@ const Col = styled.div`
 	flex-direction: column;
 `
 
-const StyledCard = styled(Card)`
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 49px;
+const StyledCard = styled(Card)`	
+	position: initial;
 	background-color: ${palette('grayscale', 7)};
-	z-index: 4;
 	width: 100%;
-	box-shadow: 0 12px 20px rgba(0,0,0,0.8);
+	box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.8);
+	border-radius: 106px;
+
+	@media screen and (max-width: 500px) {
+		position: absolute;
+		z-index: 4;
+		left: 0;
+		right: 0;
+		top: 69px;
+		border-radius: 20px;
+	}
 
 	@media screen and (min-width: 800px) {
-		top: 1%;
+		margin-top: 40px;
+    margin-bottom: 28px;
 	}
 `
 
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	padding: 1.2em;
+	padding: 23px 1.2em;
 
 	.react-autosuggest__container {
 		margin: 0;
@@ -51,18 +58,35 @@ const Wrapper = styled.div`
 			height: 2em;
 		}
 	}
+
+	@media screen and (min-width: 800px) {
+		padding: 36px 1.2em;
+	}
 `
 
 const TopBar = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 `
 
 const LeftCol = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 60%;
+	width: 85%;
+
+	& input{
+		height:40px !important;
+	}
+
+	@media screen and (min-width: 800px) {
+		margin-left: 65px;
+		width: 60%;
+
+		& input{
+			height:58px !important;
+		}
+	}
 `
 
 const StyledSearch = styled(Search)`
@@ -75,17 +99,29 @@ const RightCol = styled.div`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-end;
-	width: 40%;
-	margin-left: 3em;
-	max-width: 10em;
+	width: 20%;
+	margin-right: 70px;
+	max-width: 15em;
 	max-height: 6em;
+	font-size: 20px;
 
+	@media screen and (max-width: 500px) {
+		margin-left: 2em;
+		margin-right: 0;
+		margin-top: 10px;
+		width: 80%;
+		font-size: 16px;
+	}
 `
 
 const Row = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
+
+	@media screen and (min-width: 800px) {
+		flex-direction: row;
+	}
 `
 
 const GuestRow = styled.div`
@@ -96,36 +132,66 @@ const GuestRow = styled.div`
 	width: 100%;
 
 	&:first-child {
-		margin-bottom: auto;
+		margin-bottom: 30px;
+    margin-top: 10px;
+	}
+
+	@media screen and (max-width: 500px) {
+		&:first-child {
+			margin-bottom: 0;
+			margin-top: 0;
+		}	
 	}
 `
 
 const GuestType = styled.span`
 	display: inline-block;
 	width: 1.8em;
+	font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.88;
+	letter-spacing: normal;
+	font-family: Avenir;
 `
 
 const CounterWrapper = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	width: 100%;
+	width: 50%;
 	justify-content: space-between;
-	margin-left: 2em;
+	margin-left: 0.4em;
+
+	@media screen and (min-width: 800px) {
+		margin-left: 3.4em;
+		width: 100%;
+	}
 `
 
 const AddRemoveGuestButton = styled(Icon)`
 	display: inline-block;
 	border-radius: 50%;
-	color: ${palette('grayscale', 4)};
-	width: 1.7rem;
-	height: 1.7rem;
+	color: #b99f9f;
+	width: 1.9rem;
+	height: 1.9rem;
 	cursor: pointer;
-	border: 1.5px solid ${palette('grayscale', 4)};
+	box-shadow: 0px 0px 15px 0.5px rgba(0,0,0,0.15);
+  border-radius: 25px;
 
 	& svg {
-		padding: 0.2em;
-		color: ${ifNotProp('disabled', palette('secondary', 0), palette('grayscale', 5))};
+		padding: 0.3em;
+	}
+
+	@media screen and (min-width: 800px) {
+		width: 2.6rem;
+		height: 2.6rem;
+		margin-right: 19px;
+		margin-left: 19px;
+
+		& svg {
+			padding: 0.5em;
+		}
 	}
 `
 
@@ -133,25 +199,42 @@ const GuestAmountWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid ${palette('secondary', 1)};
 	width: 1.7rem;
 	height: 1.7rem;
-	border-radius: 50%;
 	font-size: 0.8em;
 	font-weight: bold;
 	color: ${palette('secondary', 1)};
 	user-select: none;
+	margin-top: 10px;
+
 `
 
 const GuestAmount = styled.span`
-	height: 56%;
+	height: 100%;
+	font-size: 16px;
+	font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+
+	@media screen and (min-width: 800px) {
+		font-size: 22px;
+	}
 `
 
 const AgeRestriction = styled.span`
 	position: absolute;
-	bottom: -8px;
+	bottom: -9px;
 	align-self: flex-start;
 	font-size: 0.7rem;
+	color: ${palette('grayscale', 4)};
+	letter-spacing: 1.5px;
+
+	@media screen and (min-width: 800px) {
+		letter-spacing: 2px;
+		bottom: -19px;
+	}
 `
 
 const StyledGuestCounterButton = styled(GuestCounterButton)`
@@ -165,29 +248,71 @@ const TagSection = styled.div`
 	flex-wrap: wrap;
 	width: 100%;
 	height: 100%;
-	margin-top: 1em;
+	margin-top: 10px;
+	margin-left: 1em;
+
+	@media screen and (min-width: 800px) {
+		margin-top: 1em;
+		margin-left: 1em;
+	}
 `
 
 const TagWrapper = styled.div`
 	position: relative;
-	margin: 0.2em;
+	margin:7px 5px 0 0;
+
+	@media screen and (min-width: 800px) {
+		margin:15px 25px 0 0;
+	}
 `
 
 const StyledTag = styled(Tag)`
 	display: inline-block;
 	background-color: ${prop('backgroundColor')};
 	margin: 0 0.3em;
-	height: 3em;
-	font-size: 0.8em;
+	height: 2.5em;
+	font-size: 13px;
 	font-weight: bold;
-	transition: background-color 250ms ease-out;
-	color: ${palette('grayscale', 0)};
+	// transition: background-color 250ms ease-out;
+	color: white;
 	width: 100%;
-	border-radius: 1.2em;
+	border-radius: 20px;
+	padding: 0.3em 0.5em;
+	-webkit-transition:0.3s all ease;
+	transition:0.3s ease all;
+	overflow: hidden;
+	position: relative;
+	font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.1;
+	letter-spacing: normal;
+	font-family: Avenir;
 
 	&:hover {
-		background-color: ${prop('backgroundHoverColor')};
+		span {
+				top:0;
+		}
 	}
+
+	@media screen and (min-width: 800px) {
+		padding: 0.3em 18px;
+		font-size: 16px;
+	}
+`
+
+const HoverTag = styled.span`
+	color:#fff;
+	position:absolute;
+	height: 2.5em;
+	top:-40px;
+	width:100%;
+	left:0;
+	padding: 0.3em 18px;
+	padding-top: 0.6em;
+	background-color: #3bd01d;
+	transition: all 0.3s ease;
+
 `
 
 const TagCloseButton = styled.span`
@@ -215,9 +340,10 @@ const FilterBlock = ({ setFilterOpen }) => {
 		return (
 			<TagWrapper key={category.id} onClick={() => removeCategory(category)}>
 				<StyledTag key={category.id} backgroundColor={backgroundColor} backgroundHoverColor={backgroundHoverColor}>
+					<HoverTag>Remove</HoverTag>
 					{category.name}
 				</StyledTag>
-				<TagCloseButton>&times;</TagCloseButton>
+				{/* <TagCloseButton>&times;</TagCloseButton> */}
 			</TagWrapper>
 		)
 	})
@@ -225,7 +351,7 @@ const FilterBlock = ({ setFilterOpen }) => {
 	return (
 		<StyledCard>
 			<Wrapper>
-				{mobile ?
+				{/* {mobile ?
 					<>
 						<TopBar>
 							<Search filterBlock />
@@ -236,9 +362,9 @@ const FilterBlock = ({ setFilterOpen }) => {
 							<CategoryButton />
 						</TagSection>
 					</>
-					:
+					: */}
 					<Row>
-						<LeftCol>
+						<LeftCol class='searchfilter'>
 							<StyledSearch filterBlock />
 							<TagSection>
 								{categoryTags}
@@ -269,10 +395,10 @@ const FilterBlock = ({ setFilterOpen }) => {
 									<AddRemoveGuestButton onClick={addKid} icon="add" />
 								</CounterWrapper>
 							</GuestRow>
-							<AgeRestriction>0-8 years</AgeRestriction>
+							<AgeRestriction>0-4 years old</AgeRestriction>
 						</RightCol>
 					</Row>
-				}
+				{/* } */}
 			</Wrapper>
 		</StyledCard>
 	)

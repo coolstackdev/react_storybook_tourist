@@ -5,7 +5,8 @@ import {
   SOCIAL_LOGIN_SUCCESS,
   SOCIAL_LOGOUT,
   EMAIL_LOGIN_SUCCESS,
-  EMAIL_REGISTER_SUCCESS
+  EMAIL_REGISTER_SUCCESS,
+  HOST_ID_UPDATE,
 } from './actions'
 
 export default (state = initialState, { type, payload }) => {
@@ -29,6 +30,14 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         user: initialState.user,
+      }
+    case HOST_ID_UPDATE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          hostid: payload,
+        }
       }
     default:
       return state

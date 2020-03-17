@@ -31,20 +31,31 @@ const EnhancedCalendar = ({
   EnhancedCalendar.handleClickOutside = () => setCalendarOpen(false)
 
   return (
-    <StyledCalendar
-      calendarOpen={!!calendarOpen}
-      showNeighboringMonth
-      minDetail="month"
-      onClickDay={handleChooseDate}
-      activeStartDate={props.experienceDate}
-      tileDisabled={({ activeStartDate, date, view }) => date < new Date()}
-      tileDisabled={({ activeStartDate, date, view }) => {
-        const availabilitiesForCurrentDate = getTimesForCurrentDate(date, props.detail.availabilities)
-        return (
-          !availabilitiesForCurrentDate.length
-        )
-      }}
-    />
+    <>
+    { props.reviewCalendar ?
+      <StyledCalendar
+        calendarOpen={!!calendarOpen}
+        showNeighboringMonth
+        minDetail="month"
+        onClickDay={handleChooseDate}
+        activeStartDate={props.experienceDate}
+      /> :
+      <StyledCalendar
+        calendarOpen={!!calendarOpen}
+        showNeighboringMonth
+        minDetail="month"
+        onClickDay={handleChooseDate}
+        activeStartDate={props.experienceDate}
+        tileDisabled={({ activeStartDate, date, view }) => date < new Date()}
+        tileDisabled={({ activeStartDate, date, view }) => {
+          const availabilitiesForCurrentDate = getTimesForCurrentDate(date, props.detail.availabilities)
+          return (
+            !availabilitiesForCurrentDate.length
+          )
+        }}
+      />
+    }
+    </>
   )
 }
 

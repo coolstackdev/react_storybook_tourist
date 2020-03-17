@@ -16,10 +16,11 @@ import { CityCard } from '../components'
 const Container = styled.div`
 	position: relative;
 	width: 100%;
-
+	padding: 0 20px;
 	.slick-track {
 		padding-bottom: 32px;
 	}
+	margin-top: 20px;
 `
 
 const Arrow = styled(Icon)`

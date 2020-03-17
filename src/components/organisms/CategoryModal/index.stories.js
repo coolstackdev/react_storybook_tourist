@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { CategoryModal.js } from 'components'
+import { CategoryModal } from 'components'
 
 storiesOf('CategoryModal.js', module)
   .add('default', () => (

@@ -20,6 +20,8 @@ import {
   EditExperiencePage,
   MyExperiencesPage,
   PaymentSuccessfulPage,
+  HostProfilePage,
+  JoinCommunityPage
 } from 'components'
 import { PaymentPage } from 'containers'
 
@@ -61,6 +63,8 @@ const App = () => {
             <Route exact path="/my-experiences" component={MyExperiencesPage} />
             <Route exact path="/my-experiences/create" component={EditExperiencePage} />
             <Route exact path="/my-experiences/:experiencename/edit" component={EditExperiencePage} />
+            <Route exact path="/Host-Profile" component={HostProfilePage} />
+            <Route exact path="/Join-Community-Page" component={JoinCommunityPage} />
             <Route exact path="/:cityname/personalize" component={FilterPage} />
             <Route exact path="/:cityname/experiences" component={SearchPage}>
               <Redirect to="/:cityname" />

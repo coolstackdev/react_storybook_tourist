@@ -36,6 +36,7 @@ export const initialNewExperienceDetailState = {
   photos: [],
   highlights: [],
   original_price: 0,
+  highlights_links_string: ''
 }
 
 export const getResourceState = (state = initialState, resource) => {

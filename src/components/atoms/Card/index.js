@@ -13,7 +13,7 @@ const Card = styled.div`
   background-color: ${ifProp('opaque', palette(0, true), 'transparent')};
 	box-shadow: ${ifNotProp('flat', '0 6px 16px 0 rgba(0,0,0,.15)')};
 	transition: box-shadow .13s ease-in;
-  border-radius: 0.7rem;
+  border-radius: 28px;
 	&:hover {
 		box-shadow: ${ifProp('hover', '0 8px 16px 0 rgba(0,0,0,.25)')};
   }

@@ -91,7 +91,6 @@ const SignInModal = ({
   const [passwordType, setPasswordType] = useState('password')
   const [emailHidden, setEmailHidden] = useState(true)
   const { Wait, isWaiting } = useWait()
-
   useEffect(() => {
     onClose()
   }, [user])

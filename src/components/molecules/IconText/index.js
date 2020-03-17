@@ -5,6 +5,8 @@ import styled from 'styled-components'
 import { Icon } from 'components'
 
 const fontSize = ({ height }) => height ? `${height / 3 / 16}rem` : '0.75em'
+const textSize = ({ textFontSize }) => textFontSize ? `${textFontSize}px` : '20px'
+const marginTop = ({ top }) => top ? `${top}px` : '0'
 
 const margin = ({ hasText, right }) => {
   if (hasText) {
@@ -21,13 +23,16 @@ const StyledIcon = styled(Icon)`
   }
 `
 
-const Text = styled.span`
+const Text = styled.span`  
+  font-size: ${textSize};
   @media screen and (max-width: 420px) {
     display: ${({ responsive }) => responsive && 'none'};
   }
 `
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin-top: ${marginTop};
+`
 
 const IconText = ({
   height,
@@ -35,6 +40,8 @@ const IconText = ({
   right,
   responsive,
   children,
+  textFontSize,
+  top,
   ...props
 }) => {
   const { palette, reverse } = props
@@ -51,9 +58,9 @@ const IconText = ({
     />
   )
   return (
-    <Wrapper {...props}>
+    <Wrapper  top={top} {...props}>
       {right || iconElement}
-      <Text responsive={responsive}>{children}</Text>
+      <Text textFontSize={textFontSize} responsive={responsive}>{children}</Text>
       {right && iconElement}
     </Wrapper>
   )

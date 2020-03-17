@@ -28,15 +28,21 @@ const StyledCard = styled(Card)`
 	flex-wrap: wrap;
 	/* margin: 0 auto; */
 	min-width: 16em;
-	max-width: 20em;
+	max-width: 16.9em;
 	margin-left: 1em;
 	margin-right: 1em;
+
+	@media screen and (max-width: 500px) {
+		max-width: 19em;
+		margin-left: 2em;
+		margin-right: 2em;
+	}
 `
 
 const StyledImage = styled(Image)`
-	height: 12em;
-	border-top-left-radius: 0.5rem;
-	border-top-right-radius: 0.5rem;
+	height: 20em;
+	border-top-left-radius: 28px;
+	border-top-right-radius: 28px;
 `
 
 const DetailsStrip = styled.div`
@@ -46,11 +52,11 @@ const DetailsStrip = styled.div`
 	flex-wrap: wrap;
 	/* justify-content: space-between; */
 	justify-content: flex-start;
-	border-bottom-left-radius: 0.5rem;
-	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 28px;
+	border-bottom-right-radius: 28px;
 	padding: 0.8rem 1.1rem;
 	background-color: ${palette('grayscale', 8)};
-	height: 12em;
+	height: 80px;
 `
 
 const StyledRating = styled(Rating)`
@@ -67,8 +73,9 @@ const ExperienceName = styled(Heading)`
 	color: ${palette('secondary', 0)};
 	font-weight: bold;
 	max-width: 80%;
-	margin-bottom: 0.4em;
-	margin-top: 0.4em;
+	text-align: center;
+	width: 100%;
+	margin: auto;
 `
 
 const ExperienceDescription = styled(Paragraph)`
@@ -150,10 +157,10 @@ const ExperiencePreviewCard = ({
 
 			<StyledImage imgSrc={experience.photos[0].photo_url} />
 
-			{/* <DetailsStrip>
-				<StyledRating type="experienceCard" initialRating={experience.rating} placeholderValue={experience.rating} />
+			<DetailsStrip>
+				{/* <StyledRating type="experienceCard" initialRating={experience.rating} placeholderValue={experience.rating} /> */}
 				<ExperienceName level={4} bold="true">{experience.title}</ExperienceName>
-
+{/* 
 				<ExperienceDescription level={4}>{experience.tag_line}</ExperienceDescription>
 
 				<TimePriceWrapper>
@@ -164,8 +171,8 @@ const ExperiencePreviewCard = ({
 					<ExperiencePrice icon="dollar" palette="secondary" height={49}>
 						{Math.round(getTourCost(experience.base_price, props.adults, experience.number_in_base, experience.extra_person_cost) / (props.adults + props.kids))} {experience.currency} per person
 					</ExperiencePrice>
-				</TimePriceWrapper>
-			</DetailsStrip> */}
+				</TimePriceWrapper> */}
+			</DetailsStrip>
 
 			<OverlayLink
 				to={`/${props.match.params.cityname}/experiences/${experience.nickname}`}

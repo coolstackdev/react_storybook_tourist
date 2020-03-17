@@ -9,7 +9,7 @@ import Icon from '../Icon'
 
 const ArrowWrapper = styled.div`
   position: absolute;
-  top: 50%;
+  top: 43%;
   right: ${(props => props.direction === "right" && "25px")};
   left: ${(props => props.direction === "left" && "25px")};
   z-index: 10;
@@ -37,7 +37,7 @@ const StyledIcon = styled(Icon)`
 const Arrow = ({ direction, switchSlide, ...props }) => {
   return (
     <ArrowWrapper onClick={switchSlide} direction={direction}>
-      <StyledIcon icon={direction === 'left' ? 'backwards' : 'forwards'} />
+      <StyledIcon icon={direction === 'left' ? 'back' : 'next'} />
       {/* <FontAwesomeIcon``
         icon={direction === "left" ? faAngleLeft : faAngleRight}
         color="#fff"

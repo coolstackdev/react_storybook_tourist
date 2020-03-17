@@ -7,7 +7,7 @@ export const initialUserSelectionsState = {
     id: 42,
     name: 'English',
   }],
-  adults: 2,
+  adults: 1,
   kids: 0,
   experienceDate: null,
   experienceTime: null

@@ -32,10 +32,12 @@ const StyledCard = styled(Card)`
 	margin: 0 auto;
 	/* max-width: 1100px; */
 	min-width: 320px;
+	border-radius: 58px;
+	overflow: auto;
+	box-shadow:0 0 13px rgba(0,0,0,0.8);
 
 	@media screen and (min-width: 800px) {
 		flex-direction: row;
-		border-top-right-radius: 0.5rem;
 	}
 `
 
@@ -55,7 +57,7 @@ const OverlayLink = styled(Link)`
 
 const StyledCarousel = styled(Carousel)`
 	width: 100%;
-	height: 500px;
+	height: 250px;
 
 	@media screen and (min-width: 500px) {
 		border-top-left-radius: 0.5rem;
@@ -64,7 +66,7 @@ const StyledCarousel = styled(Carousel)`
 
 	@media screen and (min-width: 800px) {
 		height: 382px;
-		width: 75%;
+		width: 68%;
 		border-top-left-radius: 0.5rem;
 		border-bottom-left-radius: 0.5rem;
 		border-top-right-radius: 0;
@@ -74,52 +76,43 @@ const StyledCarousel = styled(Carousel)`
 const DetailsStrip = styled.div`
 	position: relative;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	border-bottom-left-radius: 0.5rem;
-	border-bottom-right-radius: 0.5rem;
-	padding: 1.2rem 1.1rem;
+	padding: 0.8rem 1.1rem;
 	background-color: ${palette('grayscale', 7)};
 
 	@media screen and (min-width: 800px) {
-		flex-direction: column;
-		width: 25%;
-		border-bottom-left-radius: 0;
-		border-bottom-right-radius: 0.5rem;
-		border-top-right-radius: 0.5rem;
+		width: 32%;
+		padding: 1.2rem 0.8rem 41px 1.8rem;
 	}
 
-	@media screen and (min-width: 1100px) {
-		padding: 1.2rem 1.8rem;
-	}
+	// @media screen and (min-width: 1100px) {
+	// 	padding: 1.2rem 1.8rem;
+	// }
 `
 
 const TitleWrapper = styled.div`
 	display: flex;
-	flex-direction: row-reverse;
+	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
 
 	@media screen and (min-width: 800px) {
-		flex-direction: column;
 	}
 `
 
 const HostWrapper = styled.div`
-	position: absolute;
+	position: relative;
+	margin: 0.4rem 0;
+	height: 14%;
+	top: 0;
+	align-items: center;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	position: absolute;
-	top: -86px;
 
 	@media screen and (min-width: 800px) {
-		position: relative;
-		margin-top: 0.5rem;
-		margin-bottom: 0.5rem;
-		height: 14%;
-		top: 0;
+		margin: 0.5rem 0;
 	}
 `
 
@@ -129,91 +122,135 @@ const StyledAvatar = styled(Avatar)`
 	pointer-events: none;
 	float: left;
 
+	& img {
+		width: 30px;
+		height: 30px;
+	}
+
 	@media screen and (min-width: 800px) {
+		& img {
+			width: 50px;
+			height: 50px;
+		}
 	}
 `
 
 const HostName = styled(Heading)`
 	${verticalMarginMixin};
-	color: ${palette('grayscale', 7)};
+	color: ${palette('grayscale', 1)};
 	margin-left: .6em;
-	font-size: 1.1rem;
+	font-size: 13px;
 	font-weight: bold;
 	max-width: 52%;
 	display: inline-block;
 	align-self: flex-end;
 	line-height: 1.2;
+	margin-top: 0px;
+	margin-bottom: 10px;
 
 	@media screen and (min-width: 800px) {
 		color: ${palette('grayscale', 1)};
+		margin-bottom: 15px;
+		font-size: 1rem;
 	}
 `
 
 const Shield = styled(Icon)`
 	position: absolute;
-	right: 0;
-	top: 0;
 	display: flex;
 	align-content: center;
 	justify-content: center;
 	z-index: 2;
 	margin: 0.3em;
 	color: ${palette('secondary', 2)};
+	right:  45%;
+	top: 14px;
+
+	@media screen and (max-width: 500px) {
+		top: -1px;
+		right: 70%;
+		width: 17px;
+	}
 `
 
 const ExperienceName = styled(Heading)`
 	color: ${palette('grayscale', 0)};
-	font-weight: bold;
-	max-width: 80%;
-	margin-bottom: 0;
+	font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.2;
+  letter-spacing: normal;
+	margin-bottom: 5px;
+	margin-top: 5px;
+
+	@media screen and (min-width: 800px) {
+		font-size: 20px;
+	}
 `
 
 const ExperienceDescription = styled(Paragraph)`
 	margin-top: 0.1em;
 	color: ${palette('grayscale', 1)};
-	font-size: 0.9rem;
+	font-size: 13px;
 
 	@media screen and (min-width: 800px) {
-		line-height: 1.2;
+		line-height: 1.5;
+		font-size: 16px;
 	}
 `
 
 const ExperienceTime = styled(IconText)`
 	${verticalMarginMixin};
-	width: 100%;
+
 	align-self: flex-start;
-	color: ${palette('grayscale', 1)};
-	margin-bottom: 0;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	margin: 0 0 0 3px;
+	font-size: 13px;
 
 	& > :first-child {
-		display: none;
-		margin-right: 1em;
+		margin: 0;
+		margin-right: 5px;
+		width: 22px;
+    height: 18px;
+	}
 
-		@media screen and (min-width: 800px) {
+
+	@media screen and (min-width: 800px) {
+		font-size: 16px;
+
+		& > :first-child {
 			display: inline-block;
-			width: 1em;
+			width: 26.5px;
+			height: 26.5px;
+			margin-left: 3px;
+			margin-right: 20px;
+			margin-bottom: 10px;
+		}
+
+		& > :last-child {
+			margin-top: 7px;
 		}
 	}
 `
 
-const ExperiencePrice = styled(IconText)`
-	${verticalMarginMixin};
-	align-self: flex-start;
-	color: ${palette('grayscale', 1)};
-	margin-top: 0;
+const ExperiencePrice = styled.div`
+	font-size: 20px;
 
-	& > :first-child {
-		display: none;
-		margin-right: 1em;
-
-		@media screen and (min-width: 800px) {
-			display: inline-block;
-		}
+	& span:first-child {
+		font-weight: bold;
 	}
+`
 
-	@media screen and (min-width: 800px) {
-		align-self: flex-start;
-	}
+const BeforeDiscount = styled.span`
+	text-decoration-line: line-through;
+`
+
+const Percent = styled.span`
+	font-weight: bold;
+	color: #f00;
 `
 
 const StyledRating = styled(Rating)`
@@ -247,9 +284,13 @@ const ButtonWrapper = styled.div`
 
 const LetsGoButton = styled(Button)`
 	margin-left: 0.1em;
+	border-radius: 22.5px;
+	font-weight: 500;
+	width: 50%;
+	margin-top: 5px;
 
-	@media screen and (min-width: 800px) {
-		width: 100%;
+	@media screen and (min-width:800px) {
+		width: 62%;
 	}
 `
 
@@ -259,6 +300,10 @@ const DeleteButton = styled(Button)`
 
 const EditButton = styled(Button)`
 	background-color: ${palette('primary', 1)};
+`
+
+const FixedName = styled.span`
+	font-weight: normal
 `
 
 const ExperienceCard = ({
@@ -281,16 +326,14 @@ const ExperienceCard = ({
 		})
 	}
 
-	const ourPrice = Math.floor(experience.fixed_cost + (experience.fixed_cost_pp) + (experience.hourly_rate * (experience.duration_in_minutes / 60)))
+	const ourPrice = ((experience.fixed_cost + (experience.fixed_cost_pp) + (experience.hourly_rate * (experience.duration_in_minutes / 60))) * (1 + (experience.commission / 100))).toFixed(2)
+	const beforeDiscount = (ourPrice * (100 / (100 - experience.discount))).toFixed(2)
 
 	return (
 		<StyledCard>
-
-			<Shield icon="shield" size={35} />
-
 			<StyledCarousel images={experience.photos} />
-
 			<DetailsStrip>
+				<Shield icon="shield" size={25} />
 				<TitleWrapper>
 					<StyledRating type="experienceCard" initialRating={experience.rating} placeholderValue={experience.rating} />
 					<ExperienceName level={4} bold="true">{experience.title}</ExperienceName>
@@ -300,16 +343,21 @@ const ExperienceCard = ({
 
 				<HostWrapper>
 					<StyledAvatar avatarUrl={experience.host_thumbnail_url} />
-					<HostName level={4}>{experience.host_name}</HostName>
+					<HostName level={4}>
+						{experience.host_name}
+					</HostName>
 				</HostWrapper>
 
-				<ExperienceTime icon="clock" palette="secondary" height={49}>
+				<ExperienceTime icon="passage-of-time" palette="secondary" height={49}>
 					{Math.round(experience.duration_in_minutes / 60 * 100) / 100} hours
 				</ExperienceTime>
 
-				<ExperiencePrice icon="dollar" palette="secondary" height={49}>
-					{'Starting from $'}
-					{ourPrice}
+				<ExperiencePrice>
+					<span>{'Starting'}&nbsp;</span>
+					<span>{experience.currency} </span>
+					{experience.discount !== 0 && <BeforeDiscount>{beforeDiscount}</BeforeDiscount>}
+					<span>&nbsp;{ourPrice}</span>
+					{experience.discount !== 0 && <Percent> ({experience.discount}% off)</Percent> }
 				</ExperiencePrice>
 
 				{myExperiencesPage ?
@@ -328,7 +376,7 @@ const ExperienceCard = ({
 							state: props.location.state
 						}}
 						palette="tertiary">
-							Explore more
+							Let's go
 						</LetsGoButton>
 					</ButtonWrapper>
 				}

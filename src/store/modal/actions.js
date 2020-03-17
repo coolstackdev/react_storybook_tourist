@@ -2,6 +2,7 @@
 // https://github.com/diegohaz/arc/wiki/Example-redux-modules#modal
 export const MODAL_SHOW = 'MODAL_SHOW'
 export const MODAL_HIDE = 'MODAL_HIDE'
+export const APPLY_SELECTED = 'APPLY_SELECTED'
 
 export const modalShow = name => {
   return {
@@ -21,5 +22,17 @@ export const modalHide = name => {
     payload: {
       name,
     },
+  }
+}
+
+export const applySelected = name => {
+  return {
+    type: APPLY_SELECTED,
+    payload: {
+      name,
+    },
+    meta: {
+      gtm: name,
+    }
   }
 }
