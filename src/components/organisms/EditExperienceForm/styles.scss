@@ -1,0 +1,85 @@
+@import '../../themes/theme.scss';
+
+.countUp {
+	font-size: 1.5em;
+	margin-right: 0.1em;
+}
+
+.language-search {
+
+  .react-autosuggest__input {
+    // width: 100%;
+    height: 100%;
+    // padding: 5px 50px;
+    font-family: Helvetica, sans-serif;
+    font-weight: 300;
+    // border-radius: 0.4rem;
+    // background-color: map-get(map-get($palette, "grayscale"), "8");
+
+    &::placeholder {
+			// color: map-get(map-get($palette, "grayscale"), "4");
+		}
+	}
+	.react-autosuggest__input--focused {
+		outline: none;
+	}
+
+	.react-autosuggest__suggestions-container {
+		display: none;
+	}
+
+	.react-autosuggest__suggestions-container--open {
+		display: block;
+		position: absolute;
+		top: 25px;
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		// width: calc(16.1em + 3vw);
+		background-color: map-get(map-get($palette, "grayscale"), "7");
+		font-family: Helvetica, sans-serif;
+		font-weight: 300;
+		font-size: 16px;
+		border-bottom-left-radius: .6em;
+		border-bottom-right-radius: .6em;
+		z-index: 2;
+		box-shadow: 0px 11px 18px -5px map-get(map-get($palette, "grayscale"), "3");
+	}
+
+	.react-autosuggest__suggestions-list {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	.react-autosuggest__suggestion {
+		cursor: pointer;
+		padding-top: .7em;
+		padding-bottom: .7em;
+	}
+
+	.react-autosuggest__suggestion--highlighted {
+		background-color: map-get(map-get($palette, "grayscale"), "6");
+	}
+}
+
+.react-tags {
+	.ReactTags__tag {
+    display: inline-block;
+		border: 1px solid #ddd;
+		background-image: linear-gradient(to bottom, map-get(map-get($palette, "secondary"), "2"), map-get(map-get($palette, "secondary"), "0"));
+    color: map-get(map-get($palette, "grayscale"), "8");
+    font-size: 1em;
+    padding: 5px;
+		margin: 2px 0;
+		box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 5px;
+	}
+
+	.ReactTags__selected {
+		display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+	}
+}

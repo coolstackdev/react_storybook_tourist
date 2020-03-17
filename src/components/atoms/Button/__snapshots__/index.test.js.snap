@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should be possible to activate button with Spacebar 1`] = `
+<styled.button
+  height={40}
+  palette="primary"
+  type="button"
+>
+  <button
+    className="sc-htpNat ipjhgx"
+    height={40}
+    type="button"
+  />
+</styled.button>
+`;

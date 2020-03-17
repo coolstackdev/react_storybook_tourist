@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar when Avatar renders works 1`] = `
+<Avatar__Wrapper>
+  <Avatar__Image
+    src="https://i.ytimg.com/vi/vOWboQGcm88/maxresdefault.jpg"
+  />
+</Avatar__Wrapper>
+`;

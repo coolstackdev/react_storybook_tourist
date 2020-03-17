@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly with no props 1`] = `
+<StyledComponent
+  forwardedComponent={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "_foldedDefaultProps": Object {
+        "level": 1,
+        "palette": "grayscale",
+      },
+      "attrs": Array [],
+      "componentStyle": ComponentStyle {
+        "componentId": "Heading-sc-214rfr-0",
+        "isStatic": false,
+        "rules": Array [
+          "
+  font-family: ",
+          [Function],
+          ";
+  font-weight: ",
+          [Function],
+          ";
+  font-size: ",
+          [Function],
+          ";
+  margin: 0;
+  margin-top: 0.85714em;
+  margin-bottom: 0.57142em;
+  color: ",
+          [Function],
+          ";
+",
+        ],
+      },
+      "displayName": "Heading",
+      "foldedComponentIds": Array [],
+      "propTypes": Object {
+        "bold": [Function],
+        "children": [Function],
+        "level": [Function],
+        "palette": [Function],
+        "reverse": [Function],
+      },
+      "render": [Function],
+      "styledComponentId": "Heading-sc-214rfr-0",
+      "target": [Function],
+      "toString": [Function],
+      "warnTooManyClasses": [Function],
+      "withComponent": [Function],
+    }
+  }
+  forwardedRef={null}
+  level={1}
+  palette="grayscale"
+/>
+`;

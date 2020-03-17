@@ -1,0 +1,14 @@
+@import '../../themes/theme.scss';
+
+.read-more-button {
+	text-align: end;
+	margin-top: 1em;
+	text-decoration: underline;
+	cursor: pointer;
+	color: map-get(map-get($palette, "secondary"), "1");
+	font-weight: bold;
+}
+
+.displayed-text {
+	font-size: 1rem;
+}

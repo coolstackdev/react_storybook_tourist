@@ -1,0 +1,34 @@
+@import '../../themes/theme.scss';
+
+.react-popup-content {
+	min-width: 20em !important;
+	max-width: 100% !important;
+	width: 30em !important;
+	height: 30em !important;
+	overflow: scroll !important;
+	padding: 1.6em !important;
+	border: none;
+	border-radius: 0.8em;
+	overflow-x: hidden !important;
+
+	ul {
+		padding-left: 1rem;
+	}
+
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+		border-radius: 10px;
+		background-color: map-get(map-get($palette, "grayscale"), "8");
+	}
+
+	&::-webkit-scrollbar {
+		width: 12px;
+		background-color: map-get(map-get($palette, "grayscale"), "8");
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 10px;
+		-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+		background-color: map-get(map-get($palette, "grayscale"), "3");
+	}
+}

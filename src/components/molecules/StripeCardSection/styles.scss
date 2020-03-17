@@ -1,0 +1,46 @@
+@import '../../themes/theme.scss';
+
+.StripeElement {
+  /* box-sizing: border-box;
+  height: 40px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease; */
+	width: 100%;
+  padding: 11px 15px 11px 0;
+  font-family: Nunito, Helvetica Neue, Helvetica, Roboto, sans-serif;
+}
+
+.StripeElement--focus {
+  /* box-shadow: 0 1px 3px 0 #cfd7df; */
+}
+
+.StripeElement--invalid {
+  border-color: map-get(map-get($palette, "tertiary"), "1");;
+}
+
+.StripeElement:nth-child(1) {
+	width: 60%;
+}
+.StripeElement:nth-child(2) {
+	width: 25%;
+}
+.StripeElement:nth-child(3) {
+	width: 15%;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px map-get(map-get($palette, "grayscale"), "7") inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

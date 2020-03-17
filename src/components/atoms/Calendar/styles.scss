@@ -1,0 +1,87 @@
+@import '../../themes/theme.scss';
+
+.react-calendar {
+	border: none;
+
+	&__viewContainer {
+		padding: 0 1em 1em;
+	}
+
+	&__navigation {
+		margin-top: 0.9em;
+		margin-bottom: 0;
+
+		&__label {
+			background-color: transparent !important;
+			color: map-get(map-get($palette, "secondary"), "0");
+			font-size: 0.8em;
+		}
+
+		&__arrow {
+			color: map-get(map-get($palette, "tertiary"), "1");
+			font-size: 1.9em;
+		}
+	}
+}
+
+.react-calendar__navigation__next2-button,
+.react-calendar__navigation__prev2-button {
+	display: none;
+}
+
+.react-calendar__tile {
+	font-size: 0.9em;
+	padding: 0.75em 0.75em;
+	// color: map-get(map-get($palette, "grayscale"), "5");
+
+	&:enabled {
+		&:hover {
+			background-color: map-get(map-get($palette, "primary"), "3");
+			border-radius: 50%;
+		}
+	}
+
+	&:disabled {
+		background-color: transparent;
+	}
+
+	&--active {
+		background-color: initial;
+		color: map-get(map-get($palette, "grayscale"), "0");
+		border: 1.4px solid map-get(map-get($palette, "tertiary"), "1") !important;
+		border-radius: 50%;
+		font-weight: bold;
+	}
+}
+
+.react-calendar__month-view {
+	&__days__day {
+
+		&[disabled] {
+			color: map-get(map-get($palette, "grayscale"), "5");
+		}
+
+		&--weekend {
+			color: map-get(map-get($palette, "grayscale"), "0");
+
+			&[disabled] {
+				color: map-get(map-get($palette, "grayscale"), "5");
+			}
+		}
+
+		&--neighboringMonth {
+			color: map-get(map-get($palette, "grayscale"), "1");
+
+			&[disabled] {
+				color: map-get(map-get($palette, "grayscale"), "5");
+			}
+		}
+	}
+
+
+	&__weekdays__weekday > abbr {
+		text-decoration: none;
+		font-size: 0.8em;
+		cursor: auto;
+	}
+}

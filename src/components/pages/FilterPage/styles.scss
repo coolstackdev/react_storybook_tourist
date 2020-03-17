@@ -1,0 +1,28 @@
+@import '../../themes/theme.scss';
+
+.filter-page {
+	.react-swipeable-view-container {
+		height: 100%;
+	}
+
+	.react-carousel-dots-holder {
+		margin: 0.3em auto;
+		// width: auto !important;
+	}
+
+	.dot-holder {
+		width: 15px !important;
+		height: 15px !important;
+
+		@media screen and (min-width: 800px) {
+			width: 22px !important;
+			height: 22px !important;
+		}
+	}
+
+	.react-carousel-dots-dot {
+		.small {
+			transform: scale(1);
+		}
+	}
+}
